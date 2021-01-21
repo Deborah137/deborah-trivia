@@ -6,17 +6,17 @@ import data from "../sample_data.json";
 export function Question(props) {
   return <div> {props.question}!</div>;
 }
+// is this okay
+let questnum = 0;
 
 function App() {
   return (
     <div className="app">
       Trivia!
-      <Question question={data[0].question.text} />
+      <Question question={data[questnum].question.text} />
       <Question question="question two goes here" />
     </div>
   );
-  // is this okay
-  let questionumber = 0;
 }
 
 export default App;
