@@ -37,12 +37,12 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 - [x] Add props to `<Answer />` with the text "Answer goes here".
   - [x] Pass props for the answer choices into `<Question />`.
   - [x] Use those props to render the Answer components inside `<Question />` to display the answer choices.
-- [ ] Refactor to use map to map over all answer choices.
+- [x] Refactor to use map to map over all answer choices.
 
 > ![Day 2.0 goal](https://i.imgur.com/VpA8eRc.png)
 
 ### Goal 2: Render a button on the screen that reveals the correct answer when clicked.
-
+- [x] render button
 - [ ] Add state to `<App />` using the `useState` React hook to keep track of if the question is answered.
 - [ ] Add a button to the App component that updates state to `isAnswered` when clicked.
 - [ ] Set the state of `isAnswered` to display the correct answer choice.

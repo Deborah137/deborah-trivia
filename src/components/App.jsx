@@ -4,18 +4,29 @@ import "../css/App.css";
 import data from "../sample_data.json";
 
 //- [ ] Pass props for the answer choices into `<Question />`.
+// let pieFlavor = ["blueberry", "pumpkin", "chocolate"];
+
+// let dessert = pieFlavor.map((flavor) => {
+// 	return flavor + " pie with whipped cream";
+// });
 
 export function Question(props) {
   return (
     <div>
       <div>{props.question}</div>
-      <Answer answer={props.answer} />
+      {props.answer.map((answer) => {
+        return <Answer answer={answer} />;
+      })}
     </div>
   );
 }
 
 export function NextQuestion(props) {
   return <button>Next Question</button>;
+}
+
+export function CorrectAnswer(props) {
+  return <button>Correct Answer</button>;
 }
 
 export function Answer(props) {
@@ -29,9 +40,13 @@ function App() {
   return (
     <div className="app">
       Trivia!
-      <Question question={data[questnum].question.text} answer="my answer" />
-      <Question question="question two goes here" answer="my other answer" />
+      <Question
+        question={data[questnum].question.text}
+        answer={["ChoiceA", "ChoiceB", "ChoiceC", "ChoiceD"]}
+      />
+      {/* <Question question="question two goes here" answer=["my other answer"] /> */}
       <NextQuestion />
+      <CorrectAnswer />
     </div>
   );
 }
