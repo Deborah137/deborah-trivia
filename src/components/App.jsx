@@ -26,7 +26,7 @@ export function NextQuestion(props) {
 }
 
 export function CorrectAnswer(props) {
-  return <button>Correct Answer</button>;
+  return <button onClick={props.onClick}> Correct Answer </button>;
 }
 
 export function Answer(props) {
@@ -35,7 +35,6 @@ export function Answer(props) {
 // is this okay
 
 // declaring a regular variable
-let questnum = 0;
 
 // return <button onClick={
 //   () => setIsAnswered (true)
@@ -45,6 +44,8 @@ function App() {
   // declaring a React state
   // let [ stateVariableName, setUpdateStateFunction ]
   //  = useState(initialState)
+  let [questnum, setQuestNum] = useState(0);
+
   let [isAnswered, setIsAnswered] = useState(false);
 
   return (
@@ -56,13 +57,16 @@ function App() {
       />
       {/* <Question question="question two goes here" answer=["my other answer"] /> */}
       <NextQuestion />
-      <CorrectAnswer />
-      { if(isAnswered === True) } 
-        <p>This question has been answered.</p>
-      
+      <CorrectAnswer onClick={() => setIsAnswered(!isAnswered)} />
+      {isAnswered === true ? <p>This question has been answered.</p> : <p></p>}
     </div>
   );
 }
+
+//{ if(isAnswered === True){
+// setIsAnswered("<p>This question has been answered.</p>")} }
+
+// setisanswered
 
 export default App;
 
